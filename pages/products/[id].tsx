@@ -4,6 +4,7 @@ import {Product, getProduct } from "../../lib/product";
 
 import { FC, useEffect, useState} from 'react';
 import { Layout } from "../../components/Layout";
+import {AddToCart} from "../../lib/AddToCart";
 
 const ProductPage: FC = () => {
 
@@ -31,7 +32,7 @@ const ProductPage: FC = () => {
             <img src={product?.imageUrl}></img>
             <p>{product?.price}円</p>
             <p>{product?.description}</p>
-            <button>カートに追加する</button>
+            <button onClick={() => {if(product) AddToCart(product)}}>カートに追加する</button>
          </Layout>
      );
 } 

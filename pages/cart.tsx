@@ -1,13 +1,8 @@
 // カートに追加するデータの型
 // import {useRouter} from "next/router"
-import {Product, getProduct } from "../lib/product";
+import {Product, getProduct} from "../lib/product";
 import { FC, useEffect, useState} from 'react';
 import { Layout } from "../components/Layout";
-
-export type CartItem = {
-    product: Product; // 商品
-    quantity: number; // 個数
-  };
 
 
 const CartPage: FC = () => {
