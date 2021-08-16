@@ -24,3 +24,20 @@ export async function listProducts(): Promise<Product[]> {
   const data = await graphqlRequest({ query: listProductsQuery });
   return data.products;
 }
+
+const GetProductQuery = `
+  query getProduct($id: ID!) {
+    product(id: $id) {
+      id
+      name
+      description
+      imageUrl
+      price
+    }
+  }
+`;
+
+export async function getProduct(productID :string): Promise<Product> {
+  const data = await graphqlRequest({ query: GetProductQuery, variables: {id: productID}});
+  return data.product;
+}
