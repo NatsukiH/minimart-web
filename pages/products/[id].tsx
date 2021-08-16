@@ -29,8 +29,9 @@ const ProductPage: FC = () => {
          <Layout>
             <h1>{product?.name}</h1>
             <img src={product?.imageUrl}></img>
-            <p>{product?.price}</p>
+            <p>{product?.price}円</p>
             <p>{product?.description}</p>
+            <button>カートに追加する</button>
          </Layout>
      );
 } 
